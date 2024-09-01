@@ -60,8 +60,8 @@ type CompositionRelatesTo struct {
 	Extension         []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              DocumentRelationshipType `bson:"code" json:"code"`
-	TargetIdentifier  Identifier               `bson:"targetIdentifier" json:"targetIdentifier"`
-	TargetReference   Reference                `bson:"targetReference" json:"targetReference"`
+	TargetIdentifier  *Identifier              `bson:"targetIdentifier,omitempty" json:"targetIdentifier,omitempty"`
+	TargetReference   *Reference               `bson:"targetReference,omitempty" json:"targetReference,omitempty"`
 }
 type CompositionEvent struct {
 	ID                *string           `bson:"id,omitempty" json:"id,omitempty"`

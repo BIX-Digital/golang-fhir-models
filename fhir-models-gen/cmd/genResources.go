@@ -330,7 +330,7 @@ func appendFields(resources ResourceMap, requiredTypes map[string]bool, required
 		pathParts := Split(element.Path, ".")
 		if len(pathParts) == level+1 {
 			// direct childs
-			name := Title(pathParts[level])
+			name := title(pathParts[level])
 
 			// support contained resources later
 			if name != "Contained" {
@@ -347,7 +347,7 @@ func appendFields(resources ResourceMap, requiredTypes map[string]bool, required
 
 						typeIdentifier := ""
 						for _, pathPart := range Split((*element.ContentReference)[1:], ".") {
-							typeIdentifier = typeIdentifier + Title(pathPart)
+							typeIdentifier = typeIdentifier + title(pathPart)
 						}
 						statement.Id(typeIdentifier).Tag(map[string]string{"json": pathParts[level] + ",omitempty", "bson": pathParts[level] + ",omitempty"})
 					}
@@ -362,7 +362,7 @@ func appendFields(resources ResourceMap, requiredTypes map[string]bool, required
 				default: //polymorphic type
 					name = Replace(pathParts[level], "[x]", "", -1)
 					for _, eleType := range element.Type {
-						name := name + Title(eleType.Code)
+						name := name + title(eleType.Code)
 
 						var err error
 						i, err = addFieldStatement(resources, requiredTypes, requiredValueSetBindings, file, fields,
@@ -395,15 +395,16 @@ func addFieldStatement(
 	elementIndex, level int,
 	elementType fhir.ElementDefinitionType,
 ) (idx int, err error) {
-	fieldName := Title(name)
+	fieldName := title(name)
 	element := elementDefinitions[elementIndex]
 	statement := fields.Id(fieldName)
+	isPolymorphic := HasSuffix(element.Path, "[x]")
 
 	switch elementType.Code {
 	case "code":
 		if *element.Max == "*" {
 			statement.Op("[]")
-		} else if *element.Min == 0 {
+		} else if *element.Min == 0 || isPolymorphic {
 			statement.Op("*")
 		}
 
@@ -441,7 +442,7 @@ func addFieldStatement(
 	default:
 		if *element.Max == "*" {
 			statement.Op("[]")
-		} else if *element.Min == 0 {
+		} else if *element.Min == 0 || isPolymorphic {
 			statement.Op("*")
 		}
 
@@ -472,7 +473,7 @@ func addFieldStatement(
 		}
 	}
 
-	if *element.Min == 0 {
+	if *element.Min == 0 || isPolymorphic {
 		statement.Tag(map[string]string{"json": name + ",omitempty", "bson": name + ",omitempty"})
 	} else {
 		statement.Tag(map[string]string{"json": name, "bson": name})
@@ -489,6 +490,13 @@ func requiredValueSetBinding(elementDefinition fhir.ElementDefinition) *string {
 		}
 	}
 	return nil
+}
+
+func title(input string) string {
+	if EqualFold(input, "id") {
+		return "ID"
+	}
+	return Title(input)
 }
 
 func typeCodeToTypeIdentifier(typeCode string) string {

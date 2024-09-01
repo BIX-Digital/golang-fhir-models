@@ -37,8 +37,8 @@ type MedicationDispense struct {
 	StatusReasonCodeableConcept *CodeableConcept                `bson:"statusReasonCodeableConcept,omitempty" json:"statusReasonCodeableConcept,omitempty"`
 	StatusReasonReference       *Reference                      `bson:"statusReasonReference,omitempty" json:"statusReasonReference,omitempty"`
 	Category                    *CodeableConcept                `bson:"category,omitempty" json:"category,omitempty"`
-	MedicationCodeableConcept   CodeableConcept                 `bson:"medicationCodeableConcept" json:"medicationCodeableConcept"`
-	MedicationReference         Reference                       `bson:"medicationReference" json:"medicationReference"`
+	MedicationCodeableConcept   *CodeableConcept                `bson:"medicationCodeableConcept,omitempty" json:"medicationCodeableConcept,omitempty"`
+	MedicationReference         *Reference                      `bson:"medicationReference,omitempty" json:"medicationReference,omitempty"`
 	Subject                     *Reference                      `bson:"subject,omitempty" json:"subject,omitempty"`
 	Context                     *Reference                      `bson:"context,omitempty" json:"context,omitempty"`
 	SupportingInformation       []Reference                     `bson:"supportingInformation,omitempty" json:"supportingInformation,omitempty"`

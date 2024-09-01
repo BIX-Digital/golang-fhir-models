@@ -100,8 +100,8 @@ type ImplementationGuideDefinitionPage struct {
 	ID                *string                             `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                         `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	NameUrl           string                              `bson:"nameUrl" json:"nameUrl"`
-	NameReference     Reference                           `bson:"nameReference" json:"nameReference"`
+	NameUrl           *string                             `bson:"nameUrl,omitempty" json:"nameUrl,omitempty"`
+	NameReference     *Reference                          `bson:"nameReference,omitempty" json:"nameReference,omitempty"`
 	Title             string                              `bson:"title" json:"title"`
 	Generation        GuidePageGeneration                 `bson:"generation" json:"generation"`
 	Page              []ImplementationGuideDefinitionPage `bson:"page,omitempty" json:"page,omitempty"`

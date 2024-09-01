@@ -41,13 +41,13 @@ type Medication struct {
 	Batch             *MedicationBatch       `bson:"batch,omitempty" json:"batch,omitempty"`
 }
 type MedicationIngredient struct {
-	ID                  *string         `bson:"id,omitempty" json:"id,omitempty"`
-	Extension           []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension   []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	ItemCodeableConcept CodeableConcept `bson:"itemCodeableConcept" json:"itemCodeableConcept"`
-	ItemReference       Reference       `bson:"itemReference" json:"itemReference"`
-	IsActive            *bool           `bson:"isActive,omitempty" json:"isActive,omitempty"`
-	Strength            *Ratio          `bson:"strength,omitempty" json:"strength,omitempty"`
+	ID                  *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Extension           []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension   []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	ItemCodeableConcept *CodeableConcept `bson:"itemCodeableConcept,omitempty" json:"itemCodeableConcept,omitempty"`
+	ItemReference       *Reference       `bson:"itemReference,omitempty" json:"itemReference,omitempty"`
+	IsActive            *bool            `bson:"isActive,omitempty" json:"isActive,omitempty"`
+	Strength            *Ratio           `bson:"strength,omitempty" json:"strength,omitempty"`
 }
 type MedicationBatch struct {
 	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`

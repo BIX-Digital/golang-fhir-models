@@ -40,8 +40,8 @@ type DeviceRequest struct {
 	Status                *RequestStatus           `bson:"status,omitempty" json:"status,omitempty"`
 	Intent                RequestIntent            `bson:"intent" json:"intent"`
 	Priority              *RequestPriority         `bson:"priority,omitempty" json:"priority,omitempty"`
-	CodeReference         Reference                `bson:"codeReference" json:"codeReference"`
-	CodeCodeableConcept   CodeableConcept          `bson:"codeCodeableConcept" json:"codeCodeableConcept"`
+	CodeReference         *Reference               `bson:"codeReference,omitempty" json:"codeReference,omitempty"`
+	CodeCodeableConcept   *CodeableConcept         `bson:"codeCodeableConcept,omitempty" json:"codeCodeableConcept,omitempty"`
 	Parameter             []DeviceRequestParameter `bson:"parameter,omitempty" json:"parameter,omitempty"`
 	Subject               Reference                `bson:"subject" json:"subject"`
 	Encounter             *Reference               `bson:"encounter,omitempty" json:"encounter,omitempty"`

@@ -60,24 +60,24 @@ type EvidenceVariable struct {
 	Characteristic    []EvidenceVariableCharacteristic `bson:"characteristic" json:"characteristic"`
 }
 type EvidenceVariableCharacteristic struct {
-	ID                           *string           `bson:"id,omitempty" json:"id,omitempty"`
-	Extension                    []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension            []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Description                  *string           `bson:"description,omitempty" json:"description,omitempty"`
-	DefinitionReference          Reference         `bson:"definitionReference" json:"definitionReference"`
-	DefinitionCanonical          string            `bson:"definitionCanonical" json:"definitionCanonical"`
-	DefinitionCodeableConcept    CodeableConcept   `bson:"definitionCodeableConcept" json:"definitionCodeableConcept"`
-	DefinitionExpression         Expression        `bson:"definitionExpression" json:"definitionExpression"`
-	DefinitionDataRequirement    DataRequirement   `bson:"definitionDataRequirement" json:"definitionDataRequirement"`
-	DefinitionTriggerDefinition  TriggerDefinition `bson:"definitionTriggerDefinition" json:"definitionTriggerDefinition"`
-	UsageContext                 []UsageContext    `bson:"usageContext,omitempty" json:"usageContext,omitempty"`
-	Exclude                      *bool             `bson:"exclude,omitempty" json:"exclude,omitempty"`
-	ParticipantEffectiveDateTime *string           `bson:"participantEffectiveDateTime,omitempty" json:"participantEffectiveDateTime,omitempty"`
-	ParticipantEffectivePeriod   *Period           `bson:"participantEffectivePeriod,omitempty" json:"participantEffectivePeriod,omitempty"`
-	ParticipantEffectiveDuration *Duration         `bson:"participantEffectiveDuration,omitempty" json:"participantEffectiveDuration,omitempty"`
-	ParticipantEffectiveTiming   *Timing           `bson:"participantEffectiveTiming,omitempty" json:"participantEffectiveTiming,omitempty"`
-	TimeFromStart                *Duration         `bson:"timeFromStart,omitempty" json:"timeFromStart,omitempty"`
-	GroupMeasure                 *GroupMeasure     `bson:"groupMeasure,omitempty" json:"groupMeasure,omitempty"`
+	ID                           *string            `bson:"id,omitempty" json:"id,omitempty"`
+	Extension                    []Extension        `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension            []Extension        `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Description                  *string            `bson:"description,omitempty" json:"description,omitempty"`
+	DefinitionReference          *Reference         `bson:"definitionReference,omitempty" json:"definitionReference,omitempty"`
+	DefinitionCanonical          *string            `bson:"definitionCanonical,omitempty" json:"definitionCanonical,omitempty"`
+	DefinitionCodeableConcept    *CodeableConcept   `bson:"definitionCodeableConcept,omitempty" json:"definitionCodeableConcept,omitempty"`
+	DefinitionExpression         *Expression        `bson:"definitionExpression,omitempty" json:"definitionExpression,omitempty"`
+	DefinitionDataRequirement    *DataRequirement   `bson:"definitionDataRequirement,omitempty" json:"definitionDataRequirement,omitempty"`
+	DefinitionTriggerDefinition  *TriggerDefinition `bson:"definitionTriggerDefinition,omitempty" json:"definitionTriggerDefinition,omitempty"`
+	UsageContext                 []UsageContext     `bson:"usageContext,omitempty" json:"usageContext,omitempty"`
+	Exclude                      *bool              `bson:"exclude,omitempty" json:"exclude,omitempty"`
+	ParticipantEffectiveDateTime *string            `bson:"participantEffectiveDateTime,omitempty" json:"participantEffectiveDateTime,omitempty"`
+	ParticipantEffectivePeriod   *Period            `bson:"participantEffectivePeriod,omitempty" json:"participantEffectivePeriod,omitempty"`
+	ParticipantEffectiveDuration *Duration          `bson:"participantEffectiveDuration,omitempty" json:"participantEffectiveDuration,omitempty"`
+	ParticipantEffectiveTiming   *Timing            `bson:"participantEffectiveTiming,omitempty" json:"participantEffectiveTiming,omitempty"`
+	TimeFromStart                *Duration          `bson:"timeFromStart,omitempty" json:"timeFromStart,omitempty"`
+	GroupMeasure                 *GroupMeasure      `bson:"groupMeasure,omitempty" json:"groupMeasure,omitempty"`
 }
 type OtherEvidenceVariable EvidenceVariable
 

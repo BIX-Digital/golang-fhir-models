@@ -43,7 +43,7 @@ const (
 	StructureMapTransformCc
 	StructureMapTransformC
 	StructureMapTransformQty
-	StructureMapTransformID
+	StructureMapTransformId
 	StructureMapTransformCp
 )
 
@@ -88,7 +88,7 @@ func (code *StructureMapTransform) UnmarshalJSON(json []byte) error {
 	case "qty":
 		*code = StructureMapTransformQty
 	case "id":
-		*code = StructureMapTransformID
+		*code = StructureMapTransformId
 	case "cp":
 		*code = StructureMapTransformCp
 	default:
@@ -131,7 +131,7 @@ func (code StructureMapTransform) Code() string {
 		return "c"
 	case StructureMapTransformQty:
 		return "qty"
-	case StructureMapTransformID:
+	case StructureMapTransformId:
 		return "id"
 	case StructureMapTransformCp:
 		return "cp"
@@ -170,7 +170,7 @@ func (code StructureMapTransform) Display() string {
 		return "c"
 	case StructureMapTransformQty:
 		return "qty"
-	case StructureMapTransformID:
+	case StructureMapTransformId:
 		return "id"
 	case StructureMapTransformCp:
 		return "cp"
@@ -209,7 +209,7 @@ func (code StructureMapTransform) Definition() string {
 		return "Create a Coding. Parameters = (system. Code[, display])."
 	case StructureMapTransformQty:
 		return "Create a quantity. Parameters = (text) or (value, unit, [system, code]) where text is the natural representation e.g. [comparator]value[space]unit."
-	case StructureMapTransformID:
+	case StructureMapTransformId:
 		return "Create an identifier. Parameters = (system, value[, type]) where type is a code from the identifier type value set."
 	case StructureMapTransformCp:
 		return "Create a contact details. Parameters = (value) or (system, value). If no system is provided, the system should be inferred from the content of the value."

@@ -31,8 +31,8 @@ type MessageHeader struct {
 	Text              *Narrative                 `bson:"text,omitempty" json:"text,omitempty"`
 	Extension         []Extension                `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	EventCoding       Coding                     `bson:"eventCoding" json:"eventCoding"`
-	EventUri          string                     `bson:"eventUri" json:"eventUri"`
+	EventCoding       *Coding                    `bson:"eventCoding,omitempty" json:"eventCoding,omitempty"`
+	EventUri          *string                    `bson:"eventUri,omitempty" json:"eventUri,omitempty"`
 	Destination       []MessageHeaderDestination `bson:"destination,omitempty" json:"destination,omitempty"`
 	Sender            *Reference                 `bson:"sender,omitempty" json:"sender,omitempty"`
 	Enterer           *Reference                 `bson:"enterer,omitempty" json:"enterer,omitempty"`

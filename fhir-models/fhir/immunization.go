@@ -37,8 +37,8 @@ type Immunization struct {
 	VaccineCode        CodeableConcept               `bson:"vaccineCode" json:"vaccineCode"`
 	Patient            Reference                     `bson:"patient" json:"patient"`
 	Encounter          *Reference                    `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	OccurrenceDateTime string                        `bson:"occurrenceDateTime" json:"occurrenceDateTime"`
-	OccurrenceString   string                        `bson:"occurrenceString" json:"occurrenceString"`
+	OccurrenceDateTime *string                       `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
+	OccurrenceString   *string                       `bson:"occurrenceString,omitempty" json:"occurrenceString,omitempty"`
 	Recorded           *string                       `bson:"recorded,omitempty" json:"recorded,omitempty"`
 	PrimarySource      *bool                         `bson:"primarySource,omitempty" json:"primarySource,omitempty"`
 	ReportOrigin       *CodeableConcept              `bson:"reportOrigin,omitempty" json:"reportOrigin,omitempty"`
@@ -92,8 +92,8 @@ type ImmunizationProtocolApplied struct {
 	Series                 *string           `bson:"series,omitempty" json:"series,omitempty"`
 	Authority              *Reference        `bson:"authority,omitempty" json:"authority,omitempty"`
 	TargetDisease          []CodeableConcept `bson:"targetDisease,omitempty" json:"targetDisease,omitempty"`
-	DoseNumberPositiveInt  int               `bson:"doseNumberPositiveInt" json:"doseNumberPositiveInt"`
-	DoseNumberString       string            `bson:"doseNumberString" json:"doseNumberString"`
+	DoseNumberPositiveInt  *int              `bson:"doseNumberPositiveInt,omitempty" json:"doseNumberPositiveInt,omitempty"`
+	DoseNumberString       *string           `bson:"doseNumberString,omitempty" json:"doseNumberString,omitempty"`
 	SeriesDosesPositiveInt *int              `bson:"seriesDosesPositiveInt,omitempty" json:"seriesDosesPositiveInt,omitempty"`
 	SeriesDosesString      *string           `bson:"seriesDosesString,omitempty" json:"seriesDosesString,omitempty"`
 }

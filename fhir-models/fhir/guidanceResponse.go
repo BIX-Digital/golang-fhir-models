@@ -33,9 +33,9 @@ type GuidanceResponse struct {
 	ModifierExtension     []Extension            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	RequestIdentifier     *Identifier            `bson:"requestIdentifier,omitempty" json:"requestIdentifier,omitempty"`
 	Identifier            []Identifier           `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	ModuleUri             string                 `bson:"moduleUri" json:"moduleUri"`
-	ModuleCanonical       string                 `bson:"moduleCanonical" json:"moduleCanonical"`
-	ModuleCodeableConcept CodeableConcept        `bson:"moduleCodeableConcept" json:"moduleCodeableConcept"`
+	ModuleUri             *string                `bson:"moduleUri,omitempty" json:"moduleUri,omitempty"`
+	ModuleCanonical       *string                `bson:"moduleCanonical,omitempty" json:"moduleCanonical,omitempty"`
+	ModuleCodeableConcept *CodeableConcept       `bson:"moduleCodeableConcept,omitempty" json:"moduleCodeableConcept,omitempty"`
 	Status                GuidanceResponseStatus `bson:"status" json:"status"`
 	Subject               *Reference             `bson:"subject,omitempty" json:"subject,omitempty"`
 	Encounter             *Reference             `bson:"encounter,omitempty" json:"encounter,omitempty"`

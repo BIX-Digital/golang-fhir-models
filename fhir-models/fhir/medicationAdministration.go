@@ -37,13 +37,13 @@ type MedicationAdministration struct {
 	Status                    string                              `bson:"status" json:"status"`
 	StatusReason              []CodeableConcept                   `bson:"statusReason,omitempty" json:"statusReason,omitempty"`
 	Category                  *CodeableConcept                    `bson:"category,omitempty" json:"category,omitempty"`
-	MedicationCodeableConcept CodeableConcept                     `bson:"medicationCodeableConcept" json:"medicationCodeableConcept"`
-	MedicationReference       Reference                           `bson:"medicationReference" json:"medicationReference"`
+	MedicationCodeableConcept *CodeableConcept                    `bson:"medicationCodeableConcept,omitempty" json:"medicationCodeableConcept,omitempty"`
+	MedicationReference       *Reference                          `bson:"medicationReference,omitempty" json:"medicationReference,omitempty"`
 	Subject                   Reference                           `bson:"subject" json:"subject"`
 	Context                   *Reference                          `bson:"context,omitempty" json:"context,omitempty"`
 	SupportingInformation     []Reference                         `bson:"supportingInformation,omitempty" json:"supportingInformation,omitempty"`
-	EffectiveDateTime         string                              `bson:"effectiveDateTime" json:"effectiveDateTime"`
-	EffectivePeriod           Period                              `bson:"effectivePeriod" json:"effectivePeriod"`
+	EffectiveDateTime         *string                             `bson:"effectiveDateTime,omitempty" json:"effectiveDateTime,omitempty"`
+	EffectivePeriod           *Period                             `bson:"effectivePeriod,omitempty" json:"effectivePeriod,omitempty"`
 	Performer                 []MedicationAdministrationPerformer `bson:"performer,omitempty" json:"performer,omitempty"`
 	ReasonCode                []CodeableConcept                   `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`
 	ReasonReference           []Reference                         `bson:"reasonReference,omitempty" json:"reasonReference,omitempty"`

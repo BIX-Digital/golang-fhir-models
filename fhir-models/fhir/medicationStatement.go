@@ -37,8 +37,8 @@ type MedicationStatement struct {
 	Status                    string            `bson:"status" json:"status"`
 	StatusReason              []CodeableConcept `bson:"statusReason,omitempty" json:"statusReason,omitempty"`
 	Category                  *CodeableConcept  `bson:"category,omitempty" json:"category,omitempty"`
-	MedicationCodeableConcept CodeableConcept   `bson:"medicationCodeableConcept" json:"medicationCodeableConcept"`
-	MedicationReference       Reference         `bson:"medicationReference" json:"medicationReference"`
+	MedicationCodeableConcept *CodeableConcept  `bson:"medicationCodeableConcept,omitempty" json:"medicationCodeableConcept,omitempty"`
+	MedicationReference       *Reference        `bson:"medicationReference,omitempty" json:"medicationReference,omitempty"`
 	Subject                   Reference         `bson:"subject" json:"subject"`
 	Context                   *Reference        `bson:"context,omitempty" json:"context,omitempty"`
 	EffectiveDateTime         *string           `bson:"effectiveDateTime,omitempty" json:"effectiveDateTime,omitempty"`

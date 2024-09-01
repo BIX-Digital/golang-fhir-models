@@ -100,13 +100,13 @@ type CodeSystemConceptProperty struct {
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              string      `bson:"code" json:"code"`
-	ValueCode         string      `bson:"valueCode" json:"valueCode"`
-	ValueCoding       Coding      `bson:"valueCoding" json:"valueCoding"`
-	ValueString       string      `bson:"valueString" json:"valueString"`
-	ValueInteger      int         `bson:"valueInteger" json:"valueInteger"`
-	ValueBoolean      bool        `bson:"valueBoolean" json:"valueBoolean"`
-	ValueDateTime     string      `bson:"valueDateTime" json:"valueDateTime"`
-	ValueDecimal      float64     `bson:"valueDecimal" json:"valueDecimal"`
+	ValueCode         *string     `bson:"valueCode,omitempty" json:"valueCode,omitempty"`
+	ValueCoding       *Coding     `bson:"valueCoding,omitempty" json:"valueCoding,omitempty"`
+	ValueString       *string     `bson:"valueString,omitempty" json:"valueString,omitempty"`
+	ValueInteger      *int        `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
+	ValueBoolean      *bool       `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
+	ValueDateTime     *string     `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
+	ValueDecimal      *float64    `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
 }
 type OtherCodeSystem CodeSystem
 

@@ -121,8 +121,8 @@ type ExplanationOfBenefitDiagnosis struct {
 	Extension                []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension        []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Sequence                 int               `bson:"sequence" json:"sequence"`
-	DiagnosisCodeableConcept CodeableConcept   `bson:"diagnosisCodeableConcept" json:"diagnosisCodeableConcept"`
-	DiagnosisReference       Reference         `bson:"diagnosisReference" json:"diagnosisReference"`
+	DiagnosisCodeableConcept *CodeableConcept  `bson:"diagnosisCodeableConcept,omitempty" json:"diagnosisCodeableConcept,omitempty"`
+	DiagnosisReference       *Reference        `bson:"diagnosisReference,omitempty" json:"diagnosisReference,omitempty"`
 	Type                     []CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
 	OnAdmission              *CodeableConcept  `bson:"onAdmission,omitempty" json:"onAdmission,omitempty"`
 	PackageCode              *CodeableConcept  `bson:"packageCode,omitempty" json:"packageCode,omitempty"`
@@ -134,8 +134,8 @@ type ExplanationOfBenefitProcedure struct {
 	Sequence                 int               `bson:"sequence" json:"sequence"`
 	Type                     []CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
 	Date                     *string           `bson:"date,omitempty" json:"date,omitempty"`
-	ProcedureCodeableConcept CodeableConcept   `bson:"procedureCodeableConcept" json:"procedureCodeableConcept"`
-	ProcedureReference       Reference         `bson:"procedureReference" json:"procedureReference"`
+	ProcedureCodeableConcept *CodeableConcept  `bson:"procedureCodeableConcept,omitempty" json:"procedureCodeableConcept,omitempty"`
+	ProcedureReference       *Reference        `bson:"procedureReference,omitempty" json:"procedureReference,omitempty"`
 	Udi                      []Reference       `bson:"udi,omitempty" json:"udi,omitempty"`
 }
 type ExplanationOfBenefitInsurance struct {

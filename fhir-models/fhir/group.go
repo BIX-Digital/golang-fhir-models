@@ -43,17 +43,17 @@ type Group struct {
 	Member            []GroupMember         `bson:"member,omitempty" json:"member,omitempty"`
 }
 type GroupCharacteristic struct {
-	ID                   *string         `bson:"id,omitempty" json:"id,omitempty"`
-	Extension            []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension    []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code                 CodeableConcept `bson:"code" json:"code"`
-	ValueCodeableConcept CodeableConcept `bson:"valueCodeableConcept" json:"valueCodeableConcept"`
-	ValueBoolean         bool            `bson:"valueBoolean" json:"valueBoolean"`
-	ValueQuantity        Quantity        `bson:"valueQuantity" json:"valueQuantity"`
-	ValueRange           Range           `bson:"valueRange" json:"valueRange"`
-	ValueReference       Reference       `bson:"valueReference" json:"valueReference"`
-	Exclude              bool            `bson:"exclude" json:"exclude"`
-	Period               *Period         `bson:"period,omitempty" json:"period,omitempty"`
+	ID                   *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Extension            []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension    []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Code                 CodeableConcept  `bson:"code" json:"code"`
+	ValueCodeableConcept *CodeableConcept `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
+	ValueBoolean         *bool            `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
+	ValueQuantity        *Quantity        `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
+	ValueRange           *Range           `bson:"valueRange,omitempty" json:"valueRange,omitempty"`
+	ValueReference       *Reference       `bson:"valueReference,omitempty" json:"valueReference,omitempty"`
+	Exclude              bool             `bson:"exclude" json:"exclude"`
+	Period               *Period          `bson:"period,omitempty" json:"period,omitempty"`
 }
 type GroupMember struct {
 	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`

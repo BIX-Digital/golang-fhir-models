@@ -93,8 +93,8 @@ type AuditEventEntityDetail struct {
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              string      `bson:"type" json:"type"`
-	ValueString       string      `bson:"valueString" json:"valueString"`
-	ValueBase64Binary string      `bson:"valueBase64Binary" json:"valueBase64Binary"`
+	ValueString       *string     `bson:"valueString,omitempty" json:"valueString,omitempty"`
+	ValueBase64Binary *string     `bson:"valueBase64Binary,omitempty" json:"valueBase64Binary,omitempty"`
 }
 type OtherAuditEvent AuditEvent
 

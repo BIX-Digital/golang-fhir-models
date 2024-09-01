@@ -70,10 +70,10 @@ type ResearchElementDefinitionCharacteristic struct {
 	ID                                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension                 []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	DefinitionCodeableConcept         CodeableConcept  `bson:"definitionCodeableConcept" json:"definitionCodeableConcept"`
-	DefinitionCanonical               string           `bson:"definitionCanonical" json:"definitionCanonical"`
-	DefinitionExpression              Expression       `bson:"definitionExpression" json:"definitionExpression"`
-	DefinitionDataRequirement         DataRequirement  `bson:"definitionDataRequirement" json:"definitionDataRequirement"`
+	DefinitionCodeableConcept         *CodeableConcept `bson:"definitionCodeableConcept,omitempty" json:"definitionCodeableConcept,omitempty"`
+	DefinitionCanonical               *string          `bson:"definitionCanonical,omitempty" json:"definitionCanonical,omitempty"`
+	DefinitionExpression              *Expression      `bson:"definitionExpression,omitempty" json:"definitionExpression,omitempty"`
+	DefinitionDataRequirement         *DataRequirement `bson:"definitionDataRequirement,omitempty" json:"definitionDataRequirement,omitempty"`
 	UsageContext                      []UsageContext   `bson:"usageContext,omitempty" json:"usageContext,omitempty"`
 	Exclude                           *bool            `bson:"exclude,omitempty" json:"exclude,omitempty"`
 	UnitOfMeasure                     *CodeableConcept `bson:"unitOfMeasure,omitempty" json:"unitOfMeasure,omitempty"`

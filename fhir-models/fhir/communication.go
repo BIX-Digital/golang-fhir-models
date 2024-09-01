@@ -59,9 +59,9 @@ type CommunicationPayload struct {
 	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	ContentString     string      `bson:"contentString" json:"contentString"`
-	ContentAttachment Attachment  `bson:"contentAttachment" json:"contentAttachment"`
-	ContentReference  Reference   `bson:"contentReference" json:"contentReference"`
+	ContentString     *string     `bson:"contentString,omitempty" json:"contentString,omitempty"`
+	ContentAttachment *Attachment `bson:"contentAttachment,omitempty" json:"contentAttachment,omitempty"`
+	ContentReference  *Reference  `bson:"contentReference,omitempty" json:"contentReference,omitempty"`
 }
 type OtherCommunication Communication
 

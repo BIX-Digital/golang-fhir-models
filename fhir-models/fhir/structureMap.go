@@ -172,11 +172,11 @@ type StructureMapGroupRuleTargetParameter struct {
 	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	ValueID           string      `bson:"valueID" json:"valueID"`
-	ValueString       string      `bson:"valueString" json:"valueString"`
-	ValueBoolean      bool        `bson:"valueBoolean" json:"valueBoolean"`
-	ValueInteger      int         `bson:"valueInteger" json:"valueInteger"`
-	ValueDecimal      float64     `bson:"valueDecimal" json:"valueDecimal"`
+	ValueID           *string     `bson:"valueID,omitempty" json:"valueID,omitempty"`
+	ValueString       *string     `bson:"valueString,omitempty" json:"valueString,omitempty"`
+	ValueBoolean      *bool       `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
+	ValueInteger      *int        `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
+	ValueDecimal      *float64    `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
 }
 type StructureMapGroupRuleDependent struct {
 	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`

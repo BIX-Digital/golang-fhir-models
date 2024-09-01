@@ -60,8 +60,8 @@ type InvoiceLineItem struct {
 	Extension                 []Extension                     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension         []Extension                     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Sequence                  *int                            `bson:"sequence,omitempty" json:"sequence,omitempty"`
-	ChargeItemReference       Reference                       `bson:"chargeItemReference" json:"chargeItemReference"`
-	ChargeItemCodeableConcept CodeableConcept                 `bson:"chargeItemCodeableConcept" json:"chargeItemCodeableConcept"`
+	ChargeItemReference       *Reference                      `bson:"chargeItemReference,omitempty" json:"chargeItemReference,omitempty"`
+	ChargeItemCodeableConcept *CodeableConcept                `bson:"chargeItemCodeableConcept,omitempty" json:"chargeItemCodeableConcept,omitempty"`
 	PriceComponent            []InvoiceLineItemPriceComponent `bson:"priceComponent,omitempty" json:"priceComponent,omitempty"`
 }
 type InvoiceLineItemPriceComponent struct {
